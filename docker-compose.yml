@@ -4,7 +4,9 @@ services:
    db:
      image: mariadb:latest
      volumes:
-       - ./db_data:/var/lib/mysql
+       - db_data:/var/lib/mysql
+     ports:
+       - "3306:3306"
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: somewordpress
@@ -18,7 +20,6 @@ services:
      image: wordpress:latest
      volumes:
        - ./wp_data:/var/www/html
-       - ./wp_content:/var/www/html/wp-content
      ports:
        - "8000:80"
      restart: always
@@ -29,6 +30,5 @@ services:
        WORDPRESS_DB_NAME: wordpress
 
 volumes:
-    db_data: {}
     wp_data: {}
-    wp_content: {}
+    db_data: {}
