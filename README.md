@@ -20,3 +20,15 @@ INSERT INTO wp_usermeta (user_id, meta_key, meta_value)
 VALUES (X, 'wp_user_level', '10')
 ON DUPLICATE KEY UPDATE meta_value = '10';
 ```
+
+Another useful thing, you can pipe file contents over ssh if tools like scp, or inconsistent pathing proves an obstacle (looking at you, clownways)
+```
+ssh master_username@xxx.xxx.xxx.xxx cat /home/master/applications/random_clownways_name/public_html/dump.sql > dump.sql
+```
+
+OR, for a directory:
+```
+ssh master_username@xxx.xxx.xxx.xxx tar -czf - /home/master/applications/clownways_name/public_html/wp-content | tar -xzf - -C .
+```
+
+
