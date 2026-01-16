@@ -44,3 +44,21 @@ unqualified-search-registries = ["docker.io", "quay.io"]
 location = "docker.io"
 
 ```
+You may also need to install aardvarkdns and netavark. 
+
+Your updated registries.conf should resemble this:
+```
+# Use the V2 format explicitly
+unqualified-search-registries = ["docker.io", "quay.io"]
+
+[[registry]]
+location = "docker.io"
+
+[[registry]]
+location = "quay.io"
+
+[network]
+network_backend = "netavark"
+```
+
+Finally, you may need to manually load the requisite kernel modules. ```sudo momdprobe ip_tables```. Now the containers should build.
