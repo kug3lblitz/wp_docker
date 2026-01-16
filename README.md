@@ -31,4 +31,16 @@ OR, for a directory:
 ssh master_username@xxx.xxx.xxx.xxx tar -czf - /home/master/applications/clownways_name/public_html/wp-content | tar -xzf - -C .
 ```
 
+FOR VOID LINUX
+---------------------------------
 
+there are other instructions in the jobsplugin repo, but make sure that you set your .config/containers/registries.conf file like so:
+```
+#[registries.search]
+#unqualified-search-registries = ["docker.io"]
+unqualified-search-registries = ["docker.io", "quay.io"]
+
+[[registry]]
+location = "docker.io"
+
+```
