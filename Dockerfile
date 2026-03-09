@@ -1,4 +1,4 @@
-FROM wordpress:latest
+FROM classicpress/classicpress:latest
 
 # Install vim
 RUN apt-get update && \

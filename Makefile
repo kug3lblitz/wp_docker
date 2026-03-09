@@ -3,23 +3,22 @@ setup:
 	@make up
 
 build:
-	docker-compose build --no-cache --force-rm
+	podman-compose build --no-cache --force-rm
 
 shell:
-	docker exec -it app bash
+	podman exec -it app bash
 
 stop:
-	docker-compose stop
+	podman-compose stop
 
 up:
-	docker-compose up -d
+	podman-compose up -d
 
 down:
-	docker-compose down
+	podman-compose down
 
 purge:
-	docker system prune -a --volumes
+	podman system prune -a --volumes
 
 composer-update:
-	docker exec app bash -c "composer update"
-
+	podman exec app bash -c "composer update"

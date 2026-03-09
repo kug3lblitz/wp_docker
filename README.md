@@ -1,10 +1,12 @@
 ## WP Dockerfile for local development
 
-Numerous improvements over my original version. 
+Numerous improvements over my original version, updated in 2026 to use ClassicPress instead. 
 
-Just create a blank `wp_data` directory, run `docker-compose up -d`,
+it's all the same, but for the "database host" step in the initial setup, just use `db` instead of `localhost`
+
+Just create a blank `wp_data` directory, run `docker-compose up -d` or `podman compose up -d` if you're one of the cool kids,
 `chown -R user:user` the directories you need to work on. This should probably only be used for development as-is.
-
+Also the makefile is really for other projects, but it's a nice reference for commands, despite not working for this project.
 
 ### notes, as an aside
 
